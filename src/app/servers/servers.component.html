@@ -27,8 +27,21 @@
   [disabled]="!userName"
   (click)="OnClickRestUserName()"
 >
-  Rest userName
+  Reset userName
 </button>
 
 <app-server *ngFor="let server of servers"></app-server>
 
+<button class="btn btn-primary" (click)="OnClickShowText()">show text</button>
+<p *ngIf="showText">text test</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onClick()"
+>
+  Add clicks
+</button>
+<p>{{ clickCounter }}</p>
+
+<p *ngFor="let x of clicks">{{ x }}</p>

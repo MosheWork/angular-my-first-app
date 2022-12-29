@@ -19,6 +19,10 @@ export class ServersComponent implements OnInit {
   userName = '';
   serverCreated = false;
   servers = ['testServer', 'testServer 2'];
+  showText = true;
+  clicks = [0];
+  clickCounter = 1;
+  clicksText = 'number of click:';
 
   constructor() {
     setTimeout(() => {
@@ -41,5 +45,14 @@ export class ServersComponent implements OnInit {
   }
   OnClickRestUserName() {
     this.userName = '';
+  }
+  OnClickShowText() {
+    if (this.showText === true) this.showText = false;
+    else this.showText = true;
+  }
+  onClick() {
+    this.clicks.push(this.clickCounter);
+    this.clicksText = 'number of click:' + this.clickCounter;
+    this.clickCounter++;
   }
 }
